@@ -4,11 +4,17 @@
 # Dockerfile should pass hadolint
 # app.py should pass pylint
 # (Optional) Build a simple integration test
+SHELL=/bin/bash
 
 setup:
 	# Create python virtualenv & source it
 	# source ~/.devops/bin/activate
 	python3 -m venv ~/.devops
+
+setup-conda:
+	# Create python virtualenv & source it
+	# source ~/.devops/bin/activate
+	conda create -n devops python=3.7 -y
 
 install:
 	# This should be run from inside a virtualenv

@@ -1,5 +1,9 @@
+SHELL := /bin/bash
 setup:
 	python3 -m venv ~/.myrepo
+
+activate:
+	source ~/.myrepo/bin/activate
 
 install:
 	pip install -r requirements.txt
@@ -12,4 +16,4 @@ test:
 lint:
 	pylint --disable=R,C myrepolib cli web
 
-all: install lint test
+all: activate install lint test
